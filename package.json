@@ -1,0 +1,26 @@
+{
+  "name": "advent-of-code-2020",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FM-96/advent-of-code-2020.git"
+  },
+  "author": "Felix Müllner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FM-96/advent-of-code-2020/issues"
+  },
+  "homepage": "https://github.com/FM-96/advent-of-code-2020#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "got": "^11.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0"
+  }
+}
