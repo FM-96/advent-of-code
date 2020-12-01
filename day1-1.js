@@ -1,5 +1,9 @@
+const getInput = require('./getInput.js');
+
+main();
+
 async function main() {
-	const input = await require('./getInput.js')(1); // eslint-disable-line global-require
+	const input = await getInput(1);
 
 	const entries = input.split('\n').map(e => Number(e));
 
@@ -12,5 +16,3 @@ async function main() {
 		}
 	}
 }
-
-main();
