@@ -17,7 +17,7 @@ async function main() {
 			}
 			const [, amount, color] = /(\d+) (.+) bags?/.exec(e);
 			return {
-				amount,
+				amount: Number(amount),
 				color,
 			};
 		});
@@ -31,7 +31,7 @@ async function main() {
 	for (const value of bagsToCheck.values()) {
 		const innerBags = ruleSet.get(value.color);
 		for (const inner of innerBags) {
-			requiredBags += Number(inner.amount);
+			requiredBags += inner.amount;
 			for (let i = 0; i < inner.amount; ++i) {
 				bagsToCheck.add({color: inner.color});
 			}
