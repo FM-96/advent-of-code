@@ -1,6 +1,6 @@
 /*
 Personal ESLint config file
-Node (standalone) v2.1.0
+Node (standalone) v2.1.0 (edited)
 Made for ESLint v4.2.0 - v4.13.0+
 */
 {
@@ -9,7 +9,7 @@ Made for ESLint v4.2.0 - v4.13.0+
 		"node": true
 	},
 	"parserOptions": {
-		"ecmaVersion": 9
+		"ecmaVersion": 12
 	},
 	"extends": "eslint:recommended",
 	"rules": {
