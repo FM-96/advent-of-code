@@ -1,11 +1,10 @@
 /*
 Personal ESLint config file
-Node (standalone) v2.1.0 (edited)
-Made for ESLint v4.2.0 - v4.13.0+
+Node (standalone) v2.1.1
 */
 {
 	"env": {
-		"es6": true,
+		"es2021": true,
 		"node": true
 	},
 	"parserOptions": {
