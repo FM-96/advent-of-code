@@ -1,4 +1,4 @@
-const getInput = require('./getInput.js');
+const getInput = require('../getInput.js');
 
 main();
 

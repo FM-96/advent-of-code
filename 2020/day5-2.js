@@ -1,4 +1,4 @@
-const getInput = require('./getInput.js');
+const getInput = require('../getInput.js');
 
 main();
 
@@ -8,15 +8,22 @@ async function main() {
 	const passes = input.split('\n');
 
 	let highestId = 0;
+	const allIds = new Set();
 	for (const pass of passes) {
 		const row = binaryPartitioning(pass.split('').slice(0, 7).map(e => e === 'B'));
 		const col = binaryPartitioning(pass.split('').slice(7).map(e => e === 'R'));
 
 		const seatId = (row * 8) + col;
+		allIds.add(seatId);
 		highestId = Math.max(highestId, seatId);
 	}
 
-	console.log('Answer: ' + highestId);
+	for (let i = highestId - 1; i >= 0; --i) {
+		if (!allIds.has(i)) {
+			console.log('Answer: ' + i);
+			return;
+		}
+	}
 }
 
 function binaryPartitioning(instructions) {

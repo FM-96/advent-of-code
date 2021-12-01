@@ -1,30 +1,26 @@
-const getInput = require('./getInput.js');
+const getInput = require('../getInput.js');
 
 main();
 
 async function main() {
 	const input = await getInput(15);
 
-	const TARGET_NUMBER = 30000000;
+	const TARGET_NUMBER = 2020;
 
 	const numbers = input.split(',').map(e => Number(e));
 
-	const lastUsedMap = new Map();
-
-	for (let i = 0; i < numbers.length - 1; ++i) {
-		lastUsedMap.set(numbers[i], i);
-	}
+	const usedNumbers = new Set(numbers.slice(0, -1));
 
 	for (let i = numbers.length; i < TARGET_NUMBER; ++i) {
 		const lastNumber = numbers[i - 1];
-		if (!lastUsedMap.has(lastNumber)) {
+		if (!usedNumbers.has(lastNumber)) {
 			numbers[i] = 0;
 		} else {
-			const lastUsed = lastUsedMap.get(lastNumber);
+			const lastUsed = numbers.lastIndexOf(lastNumber, i - 2);
 			const age = (i - 1) - lastUsed;
 			numbers[i] = age;
 		}
-		lastUsedMap.set(lastNumber, i - 1);
+		usedNumbers.add(lastNumber);
 	}
 
 	console.log('Answer: ' + numbers[TARGET_NUMBER - 1]);
