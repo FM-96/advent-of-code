@@ -3,7 +3,7 @@ const getInput = require('../getInput.js');
 main();
 
 async function main() {
-	const input = await getInput(11);
+	const input = await getInput(2020, 11);
 
 	let changed;
 	let state = input;

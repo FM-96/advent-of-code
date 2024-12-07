@@ -3,7 +3,7 @@ const getInput = require('../getInput.js');
 main();
 
 async function main() {
-	const input = await getInput(1);
+	const input = await getInput(2021, 1);
 
 	const measurements = input.split('\n').map(e => Number(e));
 

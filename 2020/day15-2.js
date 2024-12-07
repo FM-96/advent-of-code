@@ -3,7 +3,7 @@ const getInput = require('../getInput.js');
 main();
 
 async function main() {
-	const input = await getInput(15);
+	const input = await getInput(2020, 15);
 
 	const TARGET_NUMBER = 30000000;
 

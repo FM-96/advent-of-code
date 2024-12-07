@@ -3,7 +3,7 @@ const getInput = require('../getInput.js');
 main();
 
 async function main() {
-	const input = await getInput(16);
+	const input = await getInput(2020, 16);
 
 	const [formatInput, , nearbyTicketsInput] = input.split('\n\n');
 

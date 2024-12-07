@@ -3,7 +3,7 @@ const getInput = require('../getInput.js');
 main();
 
 async function main() {
-	const input = await getInput(9);
+	const input = await getInput(2020, 9);
 
 	const numbers = input.split('\n').map(e => Number(e));
 

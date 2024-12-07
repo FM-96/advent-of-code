@@ -1,11 +1,12 @@
-require('dotenv').config();
-
 const got = require('got');
 
 const fs = require('fs');
+const path = require('path');
 
-module.exports = async function (day) {
-	const file = `./input-${day}.txt`;
+require('dotenv').config({path: path.resolve(__dirname, '.env')});
+
+module.exports = async function (year, day) {
+	const file = path.resolve(__dirname, 'inputs', `input-${year}-${day}.txt`);
 	let input;
 
 	try {
@@ -14,10 +15,10 @@ module.exports = async function (day) {
 		console.log(`Input file for day ${day} not found, downloading it...`);
 	}
 	if (input) {
-		return input;
+		return input.trim();
 	}
 
-	input = await got(`https://adventofcode.com/${process.env.YEAR}/day/${day}/input`, {
+	input = await got(`https://adventofcode.com/${year}/day/${day}/input`, {
 		headers: {
 			Cookie: `session=${process.env.SESSION}`,
 		},

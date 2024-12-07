@@ -3,7 +3,7 @@ const getInput = require('../getInput.js');
 main();
 
 async function main() {
-	const input = await getInput(5);
+	const input = await getInput(2020, 5);
 
 	const passes = input.split('\n');
 
